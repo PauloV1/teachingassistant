@@ -41,3 +41,10 @@ Scenario: Falha ao carregar relatório por erro no sistema
     When tento visualizar o relatório
     Then posso visualizar uma mensagem de erro informando que não foi possível carregar o relatório
     And não é exibida nenhuma informação de discrepância ou lista de alunos
+
+Scenario: Autoavaliação enviada com discrepância
+	Given eu estou logado como Aluno 1
+	When envio uma autoavaliação com discrepância superior a 25% em relação à avaliação do professor
+	Then posso visualizar a autoavaliação preenchida 
+	And as metas discrepantes são destacadas em vermelho
+	And posso visualizar uma mensagem de alerta da discrepância 
