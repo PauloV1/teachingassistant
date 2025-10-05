@@ -28,3 +28,11 @@ And eu estou na página “Inicial”
 When seleciono a opção “Realizar autoavaliação”
 Then eu vejo uma mensagem informando que só é permitido realizar a autoavaliação no final do período letivo
 
+GUI Scenario 4: Aluno remove uma meta e confirma
+Given eu estou logado como o aluno “pvbs”
+And eu estou na página “Realizar autoavaliação”
+And eu vejo as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” com conceitos “MA”, “MPA” e “MPA” respectivamente
+When eu removo o conceito “MA” da meta “Entender conceitos de requisitos”
+And confirmo a autoavaliação
+Then eu vejo uma mensagem de erro informando que há campos não preenchidos
+
