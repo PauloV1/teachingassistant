@@ -42,3 +42,10 @@ When eu adiciono “MANA” na meta “Entender conceitos de requisitos”
 And eu adiciono “MA” na meta “Especificar requisitos com qualidade”
 Then o aluno “pvbs” está armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
 
+Service Scenario 2: A remoção de um conceito vazio de um aluno não interfere em outro aluno
+Given o aluno “pvbs” armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
+And  o aluno “bsa” armazenado no sistema com o conceito “MA” na meta “Entender conceitos de requisitos”, “MPA” na meta “Especificar requisitos com qualidade” e “MPA” para “Entender conceitos de gerência de configuração
+When eu removo o conceito da meta “Especificar requisitos com qualidade” do aluno “pvbs”
+Then o aluno “pvbs” está armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
+And  o aluno “bsa” armazenado no sistema com o conceito “MA” na meta “Entender conceitos de requisitos”, “MPA” na meta “Especificar requisitos com qualidade” e “MPA” para “Entender conceitos de gerência de configuração
+And "Alteração da questão 7"...
