@@ -33,3 +33,4 @@ Scenario: Falha ao carregar relatório por erro no sistema
     When tento visualizar o relatório
     Then posso visualizar uma mensagem de erro informando que não foi possível carregar o relatório
     And não é exibida nenhuma informação de discrepância ou lista de alunos
+	And na mensagem informa o possível motivo do erro
