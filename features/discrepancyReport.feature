@@ -19,6 +19,14 @@ Scenario: Visualização com discrepância em alguns alunos
 	Then posso visualizar a lista dos alunos discrepantes
 	And visualizar a quantidade e o percentual de discrepantes em relação à turma.
 
+Scenario: Detalhamento da discrepância de um aluno
+	Given eu estou logado como professor com login “prof1”
+	And estou na tela de relatório de discrepâncias
+	And o aluno “João” aparece na lista de discrepantes
+	When eu seleciono o aluno “João”
+	Then posso visualizar uma tabela com todas as metas
+	And visualizar em vermelho as metas em que a autoavaliação do aluno é superior à do professor.
+
 Scenario: Visualizar relatório sem enviar as avaliações
 	Given eu estou logado como professor com login “prof1”
 	And não fiz a avaliação dos alunos da turma 3
