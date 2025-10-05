@@ -7,4 +7,24 @@ Feature: autoavaliação
 	I want analisar as autoavaliações dos alunos e compará-las com a minha avaliação
 	So that eu posso identificar discrepâncias, contactar os alunos para entender ou explicar as metas atribuídas e corrigir algum erro caso necessário
 
+GUI Scenario 1: Aluno tenta remover uma meta que não foi inserida
+Given eu estou logado como o aluno “pvbs”
+And eu estou na página “Realizar autoavaliação”
+When eu removo o conceito da meta “Entender conceitos de requisitos”
+Then eu vejo uma mensagem de erro informando que não é possível remover um conceito não inserido
+
+GUI Scenario 2: Aluno confirma a autoavaliação sem preencher todas as metas
+Given eu estou logado como o aluno “pvbs”
+And eu estou na página “Realizar autoavaliação”
+And eu vejo as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazias
+When eu seleciono o conceito “MA” para “Entender conceitos de requisitos”
+And eu seleciono o conceito “MPA” para “Especificar requisitos com qualidade”
+And eu confirmo a seleção
+Then eu vejo uma mensagem de erro informando que há campos não preenchidos
+
+GUI Scenario 3: Aluno insere todas as metas e confirma a autoavaliação antes do final do período letivo
+Given eu estou logado como o aluno “pvbs”
+And eu estou na página “Inicial”
+When seleciono a opção “Realizar autoavaliação”
+Then eu vejo uma mensagem informando que só é permitido realizar a autoavaliação no final do período letivo
 
