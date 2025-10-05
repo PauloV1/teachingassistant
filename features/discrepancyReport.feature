@@ -48,3 +48,5 @@ Scenario: Autoavaliação enviada com discrepância
 	Then posso visualizar a autoavaliação preenchida 
 	And as metas discrepantes são destacadas em vermelho
 	And posso visualizar uma mensagem de alerta da discrepância 
+
+	
