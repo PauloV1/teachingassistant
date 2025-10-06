@@ -41,4 +41,5 @@ Given o aluno “pvbs” está armazenado no sistema com as metas “Entender co
 When eu adiciono “MANA” na meta “Entender conceitos de requisitos”
 And eu adiciono “MA” na meta “Especificar requisitos com qualidade”
 Then o aluno “pvbs” está armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
+And "Passo adicional questão 7"
 
