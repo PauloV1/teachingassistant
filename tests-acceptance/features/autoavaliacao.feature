@@ -49,3 +49,11 @@ When eu removo o conceito da meta “Especificar requisitos com qualidade” do 
 Then o aluno “pvbs” está armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
 And  o aluno “bsa” armazenado no sistema com o conceito “MA” na meta “Entender conceitos de requisitos”, “MPA” na meta “Especificar requisitos com qualidade” e “MPA” para “Entender conceitos de gerência de configuração
 
+Service Scenario 3: Consulta com discrepâncias em alguns alunos
+Given a turma "T1" está armazenada no sistema com três alunos: Ana, Bruno e João
+And a aluna Ana atribuiu conceitos superiores aos do professor em 2 de 4 metas
+And o aluno Bruno atribuiu conceitos iguais ou inferiores em todas as metas
+And o aluno João atribuiu conceitos superiores em apenas 1 de 5 metas
+When eu consulto as discrepâncias da turma "T1"
+Then o sistema retorna uma tabela com apenas a aluna Ana é discrepante
+And o sistema informa a quantidade "1" e percentual "33%" de discrepantes.
