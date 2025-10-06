@@ -49,6 +49,7 @@ And  o aluno “bsa” armazenado no sistema com o conceito “MA” na meta “
 When eu removo o conceito da meta “Especificar requisitos com qualidade” do aluno “pvbs”
 Then o aluno “pvbs” está armazenado no sistema com as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” vazios
 And  o aluno “bsa” armazenado no sistema com o conceito “MA” na meta “Entender conceitos de requisitos”, “MPA” na meta “Especificar requisitos com qualidade” e “MPA” para “Entender conceitos de gerência de configuração
+And "commit da questão 13
 
 Service Scenario 3: Consulta com discrepâncias em alguns alunos
 Given a turma "T1" está armazenada no sistema com três alunos: Ana, Bruno e João
