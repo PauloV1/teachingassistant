@@ -58,3 +58,4 @@ And o aluno João atribuiu conceitos superiores em apenas 1 de 5 metas
 When eu consulto as discrepâncias da turma "T1"
 Then o sistema retorna uma tabela com apenas a aluna Ana é discrepante
 And o sistema informa a quantidade "1" e percentual "33%" de discrepantes.
+And "modificação questão 8"
